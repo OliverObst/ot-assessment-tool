@@ -19,7 +19,75 @@ A lightweight Python tool that applies optimal transport (OT) to classroom mark 
 ## usage
 
 ```bash
+cd src/oat/
 python oat.py marks.csv
+```
+
+## sample output
+
+![distribution preview](graph.png)
+
+```
+average shift to target truncnorm: +1.18
+
+  band 1/5: +3.03 marks
+  band 2/5: +2.81 marks
+  band 3/5: +0.59 marks
+  band 4/5: -0.50 marks
+  band 5/5: -0.41 marks
+
+bimodality – fail 48%, mid 18%, high 35%
+
+item summary (facility=mean/max)
+--------------------------------
+item  facility  discrimination
+  q1      0.53            0.78
+  q2      0.50            0.78
+  q3      0.60            0.81
+  q4      0.50            0.70
+  q5      0.60            0.66
+  q6      0.50            0.78
+  q7      0.47            0.63
+  q8      0.57            0.71
+  q9      0.05            0.21
+ q10      0.85            0.30
+
+recommendations
+---------------
+
+ • Distribution strongly bimodal – add medium‑difficulty items or partial credit to build the middle band.
+ • q9 too hard – split or add partial credit.
+
+%runfile /Users/30045063/Code/2025/ot-assessment-tool/src/oat/oat.py --wdir
+average shift to target truncnorm: +1.18
+
+  band 1/5: +3.03 marks
+  band 2/5: +2.81 marks
+  band 3/5: +0.59 marks
+  band 4/5: -0.50 marks
+  band 5/5: -0.41 marks
+
+bimodality – fail 48%, mid 18%, high 35%
+
+item summary (facility=mean/max)
+--------------------------------
+item  facility  discrimination
+  q1      0.53            0.78
+  q2      0.50            0.78
+  q3      0.60            0.81
+  q4      0.50            0.70
+  q5      0.60            0.66
+  q6      0.50            0.78
+  q7      0.47            0.63
+  q8      0.57            0.71
+  q9      0.05            0.21
+ q10      0.85            0.30
+
+recommendations
+---------------
+
+ • Distribution strongly bimodal – add medium‑difficulty items or partial credit to build the middle band.
+ • q9 too hard – split or add partial credit.
 ```
 
 ### input format
